@@ -1,7 +1,7 @@
 Jumper
 ======
 
-Jumper is 2D simple written in java.
+Jumper is 2D simple game written in java.
 
 Details:
 
