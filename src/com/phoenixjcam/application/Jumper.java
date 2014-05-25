@@ -92,7 +92,7 @@ public class Jumper extends JPanel implements Runnable, KeyListener {
 	// txt file 15 width x 8 height
 	// square size 50 x 50
 	// frame size 15 * 50 = 750 px width at 8 * 50 = 400 height
-	map = new GameMap("res/jumperMap.txt", 50);
+	map = new GameMap("src/res/jumperMap.txt", 50);
 
 	player = new Player(new Point(22, 22), new Point2D.Double(150.0, 150.0));
 
@@ -183,7 +183,7 @@ public class Jumper extends JPanel implements Runnable, KeyListener {
 	frame.setResizable(false);
 	frame.setLocation(200, 200);
 	frame.setSize(WIDTH, HEIGHT);
-	ImageIcon img = new ImageIcon("res/icoB.png");
+	ImageIcon img = new ImageIcon("src/res/icoB.png");
 	frame.setIconImage(img.getImage());
 	frame.setVisible(true);
     }
