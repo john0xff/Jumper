@@ -23,6 +23,8 @@ import com.phoenixjcam.application.player.Player;
  */
 public class Jumper extends JPanel implements Runnable, KeyListener {
     private static final long serialVersionUID = 1L;
+    
+    // static size of frame
     public static final int WIDTH = 750;
     public static final int HEIGHT = 440;
 
@@ -89,10 +91,10 @@ public class Jumper extends JPanel implements Runnable, KeyListener {
 	image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
 	g2D = (Graphics2D) image.getGraphics();
 
-	// txt file 15 width x 8 height
+	// jumperMap.txt file 15 width x 8 height (2 first line of file says size of map)
 	// square size 50 x 50
-	// frame size 15 * 50 = 750 px width at 8 * 50 = 400 height
-	map = new GameMap("src/res/jumperMap.txt", 50);
+	// frame size 15 * 50 = 750 px width at 8 * 50 = 400 height - frame made as static size
+	map = new GameMap(50);
 
 	player = new Player(new Point(22, 22), new Point2D.Double(150.0, 150.0));
 
@@ -177,13 +179,13 @@ public class Jumper extends JPanel implements Runnable, KeyListener {
 
     /** Game frame */
     private static void createGUI() {
-	JFrame frame = new JFrame("Jumper - phoenixjcam.com");
+	JFrame frame = new JFrame("Jumper");
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	frame.setContentPane(new Jumper());
 	frame.setResizable(false);
 	frame.setLocation(200, 200);
 	frame.setSize(WIDTH, HEIGHT);
-	ImageIcon img = new ImageIcon("src/res/icoB.png");
+	ImageIcon img = new ImageIcon(Jumper.class.getResource("res/icoB.png"));
 	frame.setIconImage(img.getImage());
 	frame.setVisible(true);
     }

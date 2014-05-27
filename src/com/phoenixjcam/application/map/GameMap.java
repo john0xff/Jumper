@@ -4,7 +4,8 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Point;
 import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 /**
  * 
@@ -25,7 +26,7 @@ public class GameMap {
     private Tiles tiles;
     private Point camera;
 
-    public GameMap(String s, int tilesSize) {
+    public GameMap(int tilesSize) {
 	tiles = new Tiles();
 	tiles.position = new Point();
 	tiles.size = tilesSize;
@@ -33,7 +34,20 @@ public class GameMap {
 	camera = new Point();
 
 	try {
-	    BufferedReader bfReader = new BufferedReader(new FileReader(s));
+	    // wrong way to load map - after make JAR file resource can't load
+	    // res
+	    // BufferedReader bfReader = new BufferedReader(new
+	    // FileReader("res/jumperMap.txt"));
+
+	    // same as below
+	    // GameMap.class.getResourceAsStream("jumperMap.txt");
+
+	    // dynamically get map as stream
+	    InputStream in = getClass()
+		    .getResourceAsStream("res/jumperMap.txt");
+
+	    BufferedReader bfReader = new BufferedReader(new InputStreamReader(
+		    in));
 
 	    // first and second line of map from txt file
 	    mapWidth = Integer.parseInt(bfReader.readLine());
