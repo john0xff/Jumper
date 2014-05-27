@@ -3,6 +3,8 @@ Jumper
 
 Jumper is 2D simple game written in java.
 
+Jumper.jar - runnable with res
+
 Details:
 
 - classic movements
@@ -25,6 +27,7 @@ if you want to play with code and try out your changes, go ahead
 
 If you have any problem with this app just let me know and I will try to help you.
 
+phoenixjcam.com
 bartbien88@gmail.com
 
 Have fun.
