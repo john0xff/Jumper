@@ -1,0 +1,8 @@
+
+
+texture to jumper -> project jumper2
+
+
+git add -f vendor.jar 
+
+force to add files
